@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一題
+        const heights = [170, 165, 180]; // 身高以公分為單位
+        const weights = [65, 60, 75]; // 體重以公斤為單位
+
+        // 計算 BMI 的函式
+        function calculateBMI(weight, height) {
+            const heightInMeters = height / 100; // 將身高轉換為公尺
+            return weight / (heightInMeters * heightInMeters); // 計算 BMI
+        }
+
+        // 儲存所有 BMI 值的陣列
+        const bmiValues = [];
+
+        // 計算每個人的 BMI 並儲存
+        for (let i = 0; i < heights.length; i++) {
+            const bmi = calculateBMI(weights[i], heights[i]);
+            bmiValues.push(bmi);
+        }
+
+        // 找出最小的 BMI 值
+        const minBMI = Math.min(...bmiValues);
+
+        // 四捨五入最小 BMI 值
+        const roundedMinBMI = Math.round(minBMI);
+
+        // 判斷 BMI 是否在正常範圍內
+        let status;
+        if (roundedMinBMI < 18) {
+            status = 'BMI過瘦';
+        } else if (roundedMinBMI >= 18 && roundedMinBMI <= 25) {
+            status = 'BMI正常';
+        } else {
+            status = 'BMI不正常';
+        }
+
+        // 使用 document.write 輸出結果
+        document.write(`最小值為${roundedMinBMI}，${status}`);
+        document.write("<br>");
+
+
+        
+        //第二題
+        // 定義兩個整數變數
+        let num1 = 12; // 第一個整數
+        let num2 = 18; // 第二個整數
+
+        // 函式計算最大公因數
+        function gcd(a, b) {
+            let maxGCD = 1; // 初始最大公因數
+            for (let i = 1; i <= Math.min(a, b); i++) { // 從1到最小值進行迴圈
+                if (a % i === 0 && b % i === 0) { // 如果是公因數
+                    maxGCD = i; // 更新最大公因數
+                }
+            }
+            return maxGCD;
+        }
+
+        // 計算最大公因數
+        const resultGCD = gcd(num1, num2);
+
+        // 顯示結果
+        document.write(`${num1}及${num2}之最大公因數為${resultGCD}`);
+
+    </script>
+</body>
+
+</html>

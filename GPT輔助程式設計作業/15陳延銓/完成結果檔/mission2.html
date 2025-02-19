@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一題
+        // 請利用回圈寫一個九九乘法表。
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= 9; j++)
+                document.write(`${i} * ${j} = ${i * j}<br>`);
+            document.write("<br>");
+        }
+        //第二題
+        // 請寫一個程式，宣告一個整數變數擺放成績，並以程式判斷等第，90分以上為優等，80~89分為甲等，70~79分為乙等，60~69分為丙等，60分以下為丁等。
+        // 設成績是75分
+        var source = 75, range = "";
+        var intRange = parseInt(source / 10);
+        if (intRange > 10)
+            intRange = 10;
+        switch (intRange) {
+            case 10:
+            case 9:
+                range = "優等";
+                break;
+            case 8:
+                range = "甲等";
+                break;
+            case 7:
+                range = "乙等";
+                break;
+            case 6:
+                range = "丙等";
+                break;
+            default:
+                range = "丁等";
+                break;
+        }
+        document.write(`該分數${source}轉成的等第為${range}<br>`);
+        //第三題
+        //宣告變數ｘ與ｙ為任意整數，並寫一段程式，使其執行完後能將兩變數的值交換，且過程中不可以再宣告新的變數。
+        var x = 100, y = 999;
+        document.write(`原始的x = ${x}, y = ${y}, `)
+        x = x + y;
+        y = x - y;
+        x = x - y;
+        document.write(`轉換後的x = ${x}, y = ${y}<br>`);
+        //第四題
+        //請寫一段程式解出下列問題：已知雞兔共35隻，雞兔的腳共94支，請問籠子裡雞兔各有幾隻？
+        // 設雞X隻兔35-X隻
+        var x = 0;
+        while((2*x + (35 - x) * 4 != 94) && x <= 35)
+            x++;
+        document.write(`雞有${x}隻，兔有${35 - x}隻<br>`);
+
+        //第五題
+        //已知第一個數和第二個數為1，第n為第n-1+第n-2，請撰寫一段程式使其能找出第n數為數列上的哪一個數字。
+        var n1 = 1, n2 = 1, v = 0;
+        var n = parseInt(prompt("請輸入您要找費氏數列的第幾佪值"));
+        for (var i = 2; i <n; i++)
+        {
+            v = n1 + n2;
+            n2 = n1;
+            n1 = v;
+        }
+        document.write(`第${n}個費氏數列的數字為${v}<br>`);
+
+
+
+    </script>
+</body>
+
+</html>

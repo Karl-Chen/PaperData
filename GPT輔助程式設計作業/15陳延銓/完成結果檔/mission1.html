@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一題
+        // 1.	宣告變數a為整數，值為42，宣告變數b為浮點數，值2.5，將兩值分別做加、減、乘、除及取餘數之運算，並輸出其結果
+        var a = 42, b = 2.5;
+        document.write(`a + b = ${a + b}, a - b = ${a - b}, a * b = ${a * b}, a / b = ${a/b}<br>`);
+
+        //第二題
+        //2.	撰寫一個將攝氏溫度轉換為華氏溫度的程式，攝氏溫度的值直接在程式中給定即可
+        // (華氏＝攝氏*9/5+32)。
+        //**攝氏溫度給定為25度
+        document.write(`當攝氏溫度25度時，華氏溫度為${25 * 9 / 5 +32}度<br>`);
+
+        //第三題 
+        // 3.	撰寫一個可以列出1~100整數中，不是5的倍數的程式。
+        document.write("1~100整數中，不是5的倍數的值為：");
+        for (var i = 1; i <= 100; i++)
+            if(i % 5 > 0)
+                document.write(`${i},`);
+        document.write("<br>");
+        
+
+        //第四題
+        // 4.	計算1~1000中除了3倍數外所有數的總合。
+        var ret = 0;
+        for (var i = 1; i <= 1000; i++)
+            if (i % 3 > 0)
+                ret+=i;
+        document.write(`1~1000中除了3倍數外所有數的總合為${ret}<br>`);
+
+
+
+
+    </script>
+</body>
+</html>
